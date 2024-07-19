@@ -1,12 +1,10 @@
-import Collection from "../../components/collection/Collection";
-
-import "./home.scss";
-import { callListData } from "../../lib/dummydata.js";
-
-import { Link, useLoaderData } from "react-router-dom";
 import { useContext } from "react";
-import { UserContext } from "../../contexts/UserContext.jsx";
+import { Link, useLoaderData } from "react-router-dom";
 import { Button } from "@mui/material";
+import Collection from "../../components/collection/Collection";
+import { callListData } from "../../lib/dummydata.js";
+import { UserContext } from "../../contexts/UserContext.jsx";
+import "./home.scss";
 
 const callLists = callListData;
 
@@ -70,7 +68,6 @@ const Home = () => {
             to="/login"
             variant="contained"
             color="success"
-            onClick={() => setOpen((prev) => !prev)}
           >
             Sign iN
           </Button>
