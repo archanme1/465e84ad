@@ -1,0 +1,28 @@
+.container {
+  .title {
+    font-size: 32px;
+    font-weight: bold;
+  }
+  .collection {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: space-between;
+    margin: 20px 0px;
+
+    .notfound {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+      font-weight: bold;
+
+      h1 {
+        font-size: 24px;
+        font-weight: bold;
+      }
+    }
+  }
+}

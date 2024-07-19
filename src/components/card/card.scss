@@ -1,0 +1,78 @@
+@import "../../responsive.scss";
+
+.notification {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8f9fa;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 30%;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+
+  @include sm {
+    width: 100%;
+  }
+
+  .icon {
+    margin-right: 10px;
+  }
+
+  .detailsLeft {
+    display: flex;
+    flex: 1;
+
+    .left {
+    }
+
+    .right {
+      flex: 1;
+
+      .number {
+        font-weight: bold;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+
+        &.miss {
+          color: red;
+        }
+      }
+
+      .message {
+        font-size: 12px;
+        color: #6c757d;
+      }
+    }
+  }
+
+  .detailsRight {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    .time {
+      font-size: 12px;
+    }
+
+    .icon {
+      cursor: pointer;
+      width: max-content;
+
+      &:hover {
+        color: green;
+      }
+
+      &.archive {
+        color: green;
+
+        &:hover {
+          color: black;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+@import "../../responsive.scss";
+
+.search {
+  form {
+    border: 1px solid #999;
+    display: flex;
+    justify-content: space-between;
+    max-width: 500px;
+    height: 42px;
+    gap: 5px;
+
+    img {
+      width: 22px;
+      height: 22px;
+      margin: 5px;
+    }
+
+    @include sm {
+      // flex-direction: column;
+      margin-bottom: 50px;
+      border: none;
+    }
+
+    input {
+      border: none;
+      padding: 0px 10px;
+      flex: 5;
+
+      @include lg {
+        padding: 0px 5px;
+      }
+
+      @include md {
+        width: 200px;
+      }
+
+      @include sm {
+        width: auto;
+        padding: 20px;
+        border: 1px solid #999;
+      }
+    }
+  }
+}
