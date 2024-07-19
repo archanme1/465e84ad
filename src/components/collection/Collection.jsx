@@ -1,4 +1,4 @@
-import { Tooltip } from "@mui/material";
+import { Box, Tooltip } from "@mui/material";
 import Card from "../card/Card";
 import "./collection.scss";
 
@@ -13,6 +13,12 @@ const Collection = ({
   // To manipulate and display data accordinly to props passed
   const displayData = itemCount ? data.slice(0, itemCount) : data;
 
+  const steps = [
+    "Select campaign settings",
+    "Create an ad group",
+    "Create an ad",
+  ];
+
   return (
     <div className="container">
       <Tooltip title={<span>{tooltipMessage}</span>} className="title">
@@ -25,7 +31,9 @@ const Collection = ({
           })
         ) : (
           <div className="notfound">
-            <h1>{emptyMessage}</h1>
+            <Box component="section" sx={{ p: 2, border: "1px dashed grey" }}>
+              {emptyMessage}
+            </Box>
           </div>
         )}
       </div>

@@ -1,14 +1,12 @@
-import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import { CardActionArea, CardMedia } from "@mui/material";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
-import { UserContext } from "../../contexts/UserContext";
 import "./singlecalpage.scss";
+import { CallMade, CallReceived } from "@mui/icons-material";
 
 const SingleCallPage = () => {
-  const { currentUser } = useContext(UserContext);
   const singleCallListData = useLoaderData();
 
   return (
@@ -18,18 +16,24 @@ const SingleCallPage = () => {
           <CardMedia
             component="img"
             height="140"
-            image={currentUser.avatar}
+            image="https://images.pexels.com/photos/2853432/pexels-photo-2853432.jpeg?auto=compress&cs=tinysrgb&w=400"
             alt=""
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
-              Call Details
+              <b> CALL DETAILS</b>
             </Typography>
+
             <Typography variant="body1" color="text.primary" paragraph>
-              <strong>Username:</strong> {currentUser.username}
-            </Typography>
-            <Typography variant="body1" color="text.primary" paragraph>
-              <strong>Direction:</strong> {singleCallListData.direction}
+              <strong>Direction:</strong> {singleCallListData.direction}{" "}
+              {singleCallListData.direction === "inbound" &&
+              singleCallListData.call_type === "missed" ? (
+                <CallReceived className="icon" style={{ color: "red" }} />
+              ) : singleCallListData.direction === "inbound" ? (
+                <CallReceived className="icon" style={{ color: "green" }} />
+              ) : singleCallListData.direction === "outbound" ? (
+                <CallMade className="icon" style={{ color: "green" }} />
+              ) : null}
             </Typography>
             <Typography variant="body1" color="text.primary" paragraph>
               <strong>From:</strong> {singleCallListData.from}

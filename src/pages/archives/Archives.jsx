@@ -1,14 +1,14 @@
+import { useState } from "react";
+import { useLoaderData, useRevalidator } from "react-router-dom";
 import { Button } from "@mui/material";
+import { Archive } from "@mui/icons-material";
 import Collection from "../../components/collection/Collection";
 import { callListData } from "../../lib/dummydata";
 import Search from "../../components/search/Search";
-import "./archives.scss";
-import { useLoaderData, useRevalidator } from "react-router-dom";
-import { useState } from "react";
 import mockApiRequest from "../../lib/mockApiRequest";
-import { Archive } from "@mui/icons-material";
+import "./archives.scss";
 
-const callLists = callListData;
+// const callLists = callListData;
 
 const Archives = () => {
   const [searchCall, setSearchCall] = useState("");
